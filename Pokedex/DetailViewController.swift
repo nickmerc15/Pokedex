@@ -21,10 +21,32 @@ class DetailViewController: UIViewController {
         nameLabel.text = pokemon.name
                weightLabel.text = ""
                heightLabel.text = ""
+        
+            updateUserInterface()
            
         // Do any additional setup after loading the view.
     }
     
-
+    func updateUserInterface(){
+        let pokeDetail = PokeDetail()
+        pokeDetail.url = pokemon.url
+        pokeDetail.getData {
+            DispatchQueue.main.async {
+                self.weightLabel.text = "\(pokeDetail.weight)"
+                self.heightLabel.text = "\(pokeDetail.height)"
+                
+                guard let url = URL(string: pokeDetail.imageURL) else {
+                    self.imageView.image = UIImage(systemName: "person.crop.circle.badge.xmark")
+                    return
+                }
+                do {
+                    let data = try Data(contentsOf: url)
+                    self.imageView.image = UIImage(data: data)
+                } catch {
+                    print("ERROR: error thrown trying to get image from URL \(url)")
+                }
+            }
+        }
+    }
 
 }
