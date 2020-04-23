@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    var pokemonData = PokemonData()
+    
     var pokeArray = ["Bulbasaur", "Pikachu", "Snorlax", "Wigglytuff", "Charmander"]
 
     
@@ -19,6 +21,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        pokemonData.getData {
+            print("Called pokemonData.getData")
+        }
+
     }
 
     
