@@ -15,6 +15,7 @@
 		28FD62DB2451485800F36F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FD62D92451485800F36F61 /* LaunchScreen.storyboard */; };
 		28FD62E324514C9600F36F61 /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD62E224514C9600F36F61 /* PokemonData.swift */; };
 		28FD62E524514ED700F36F61 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD62E424514ED700F36F61 /* Pokemon.swift */; };
+		28FD62E72451549800F36F61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD62E62451549800F36F61 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		28FD62DC2451485800F36F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FD62E224514C9600F36F61 /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		28FD62E424514ED700F36F61 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		28FD62E62451549800F36F61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				28FD62E424514ED700F36F61 /* Pokemon.swift */,
 				28FD62E224514C9600F36F61 /* PokemonData.swift */,
 				28FD62D22451485500F36F61 /* ViewController.swift */,
+				28FD62E62451549800F36F61 /* DetailViewController.swift */,
 				28FD62D42451485500F36F61 /* Main.storyboard */,
 				28FD62D72451485800F36F61 /* Assets.xcassets */,
 				28FD62D92451485800F36F61 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				28FD62E524514ED700F36F61 /* Pokemon.swift in Sources */,
 				28FD62D32451485500F36F61 /* ViewController.swift in Sources */,
 				28FD62CF2451485500F36F61 /* AppDelegate.swift in Sources */,
+				28FD62E72451549800F36F61 /* DetailViewController.swift in Sources */,
 				28FD62D12451485500F36F61 /* SceneDelegate.swift in Sources */,
 				28FD62E324514C9600F36F61 /* PokemonData.swift in Sources */,
 			);
