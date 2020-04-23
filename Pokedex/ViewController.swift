@@ -11,18 +11,18 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var pokemonData = PokemonData()
     
-    var pokeArray = ["Bulbasaur", "Pikachu", "Snorlax", "Wigglytuff", "Charmander"]
-
+    var pokemonData = PokemonData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        pokemonData.getData {
-            print("Called pokemonData.getData")
+       pokemonData.getData {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
 
     }
@@ -30,16 +30,16 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return pokeArray.count
-    }
+        return pokemonData.pokeArray.count
+}
     
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-          cell.textLabel?.text = "\(indexPath.row + 1). \(pokeArray[indexPath.row])"
+          cell.textLabel?.text = "\(indexPath.row + 1). \(pokemonData.pokeArray[indexPath.row].name )"
           return cell
-    }
+      }
     
     
 }

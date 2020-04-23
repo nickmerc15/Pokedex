@@ -12,9 +12,11 @@ class PokemonData {
     private struct Returned: Codable {
         var count: Int
         var next: String
+        var results: [Pokemon]
     }
     var count = 0
     var url = "https://pokeapi.co/api/v2/pokemon/"
+    var pokeArray: [Pokemon] = []
 
     func getData(completed: @escaping ()->()) {
     let urlString = url
@@ -40,6 +42,10 @@ class PokemonData {
            print("😎 Here is what was returned: \(returned)")
            self.url = returned.next
            self.count = returned.count
+            for index in 0..<returned.results.count {
+                self.pokeArray.append(returned.results[index])
+                  
+            }
         } catch {
             print("😡 JSON ERROR: \(error.localizedDescription)")
         }
