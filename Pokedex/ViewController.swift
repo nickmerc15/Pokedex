@@ -10,9 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+  
     
     
     var pokemonData = PokemonData()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,10 @@ class ViewController: UIViewController {
         }
 
     }
+    
+        
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSegue" {
             let destination = segue.destination as! DetailViewController
@@ -33,7 +39,7 @@ class ViewController: UIViewController {
             destination.pokemon = pokemonData.pokeArray[selectedIndexPath.row]
         }
     }
-    
+
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

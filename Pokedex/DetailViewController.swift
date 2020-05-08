@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var pokemonSound: UIButton!
     
     var pokemon: Pokemon!
+    var audioPlayer: AVAudioPlayer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +52,17 @@ class DetailViewController: UIViewController {
             }
         }
     }
-
+    @IBAction func pokemonSoundPressed(_ sender: Any) {
+          
+          if let sound = NSDataAsset(name: "sound0"){
+              do {
+                  try audioPlayer = AVAudioPlayer(data: sound.data)
+                  audioPlayer.play()
+              } catch {
+                  print("no dice")
+              }
+          } else {
+              print("thats a negative")
+      }
+}
 }
